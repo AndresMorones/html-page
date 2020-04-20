@@ -8,35 +8,39 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event1) { 
+var data1;
+var data2;
+
+
+document.addEventListener("DOMContentLoaded", function(event1) { 
         var promptButton1 = document.getElementById("promptButton1")
         promptButton1.addEventListener('click', getPrompt1);
 
         function getPrompt1(e1) {
-        var data1 = prompt("State the reason of grade");
         console.log(data1);
 
     return data1;
 }
 });
+console.log(data1);
 
-Console.log(data1);
 
 document.addEventListener("DOMContentLoaded", function(event2) { 
-        var promptButton2 = document2.getElementById("promptButton2")
+        var promptButton2 = document.getElementById("promptButton2")
         promptButton2.addEventListener('click', getPrompt2);
 
         function getPrompt2(e2) {
-        var data2 = prompt2("State the reason of gkrade");
         console.log(data2);
 
     return data2;
 }
 });
 
-Console.log(data2);
+console.log(data2);
 
-    </script>
+
+</script>
+
 </head>
 <body>
     <div> <h1>Class Attendance</h1>
@@ -114,6 +118,7 @@ Console.log(data2);
             <td><input type="button" id="promptButton1" value="Reason of grade"><br></td>
             <td><input type="button" id="promptButton1" value="Reason of grade"><br></td>
             <td><input type="button" id="promptButton1" value="Reason of grade"><br></td>
+ 
         </tr>
         </tr>
 
@@ -121,3 +126,4 @@ Console.log(data2);
  
 
 </body>
+   
