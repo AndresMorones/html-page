@@ -1,0 +1,205 @@
+<!doctype html>
+
+
+<head>
+    <title>Cookie Clicker</title>
+    <style>
+        img#cookie {
+            width: 200px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        div.credits {
+            font-size:0.5em;
+        }
+        i {
+            font-size : 50px;
+            font-style : oblique;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+        i {
+            font-size : 30px;
+            font-style : normal;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            font-size : 50px;
+            font-style : normal;
+            font-weight: bold;
+            color:rgb(80, 21, 21);
+        }
+        body{
+            text-align: center;
+            border-style: groove;
+            border-width: 20px;
+            border-color: brown;
+            padding-bottom: 100px;
+            background-color: rgba(210, 105, 30, 0.836);
+            margin-top: 20px;
+            margin-bottom: 50px;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        .cookies {
+height: 204px;
+width: 204px;  
+position: absolute;
+transition: .5s ease;
+    top: 32.5%;
+    left: 42.5%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+}
+.res {
+    background-color: rgba(211, 7, 7, 0.705);
+}
+.bos {
+    background-color: rgb(172, 44, 44);
+    height: 120px;
+width: 155px;  
+position: absolute;
+transition: .5s ease;
+    top: 52%;
+    right: 70.5%;
+    border-radius: 50px;
+ 
+}
+b {
+    font-size: 20px;
+    position: relative;
+  right: 330px;
+  bottom: 300px;
+}
+#explanation {
+            visibility: hidden;
+            width: 500px;
+        }
+
+    </style>
+    <script>
+    var score = 0;
+    var isb = false;
+
+    
+       document.addEventListener("DOMContentLoaded", function(click1) { 
+        var clicker = document.getElementById("clicker")
+        clicker.addEventListener('click', GetClick1);
+
+        function GetClick1(c1) {
+        if (isb = true) {
+         score = score + 1;
+        console.log(score);
+        }
+        else if (isb = true) {
+         score = score + 2;
+        console.log(score);
+        }
+        var target = document.getElementById("points");
+         var newContent = "<i>";
+         newContent +=  score;
+         newContent +=  "</i>";
+         newContent +=  "<i> cookies</i>";
+         target.innerHTML = newContent;
+        if (score > 9) {
+        var target = document.getElementById("bonus");
+         var newContent = "<i>BONUS!</i><br>";
+         newContent +=  "10 cookies for x2 clicker";
+            target.innerHTML = newContent;
+            target.style.border = "1px  brown";
+            target.style.width = "200px";
+            target.style.padding = "5px";
+            target.style.position = "absolute";
+        
+
+            
+
+            var hiddenBlock = document.getElementById("explanation")
+            hiddenBlock.style.visibility = "visible";
+        }
+    }
+
+        
+        
+});
+document.addEventListener("DOMContentLoaded", function(res1) { 
+        var Reset = document.getElementById("Reset")
+        Reset.addEventListener('click', GetReset1);
+
+        function GetReset1(r1) {
+        score = 0;
+        console.log(score);
+        var hiddenBlock = document.getElementById("explanation")
+            hiddenBlock.style.visibility = "hidden";
+        isb = false;
+        var target = document.getElementById("points");
+         var newContent = "<i>";
+         newContent +=  score;
+         newContent +=  "</i>";
+         newContent +=  "<i> cookies</i>";
+         target.innerHTML = newContent;
+        }
+        
+
+});
+document.addEventListener("DOMContentLoaded", function(bon1) { 
+        var useb = document.getElementById("useb")
+        useb.addEventListener('click', Getuseb1);
+
+        function Getuseb1(u1) {
+        score = score - 10;
+        console.log(score);
+        var hiddenBlock = document.getElementById("explanation")
+            hiddenBlock.style.visibility = "hidden";
+            isb = true;
+            var target = document.getElementById("points");
+         var newContent = "<i>";
+         newContent +=  score;
+         newContent +=  "</i>";
+         newContent +=  "<i> cookies</i>";
+         target.innerHTML = newContent;
+
+ 
+    }
+
+});
+
+
+
+
+
+
+       
+
+
+    </script>
+</head>
+<body>
+    <h1>Cookie Clicker</h1><br>
+     <div id="points">
+        <br><i>0 cookies</i>
+    </div>
+    <button class= "cookies" id=clicker></button>
+    <img src='cookie.png' id="cookie">
+    <div class='credits'>Cookie image taken from https://ya-webdesign.com/explore/cartoon-cookie-png/</div>
+    <br><br><br><td><input type="button" id="Reset" value="Reset Game" class="res"><br></td>
+
+    <div id="bonus">
+        <br><br><b>Bonus waiting at <br>10 cookies! </b> <br>
+    </div>
+    <div id="explanation">
+        <td><input type="button" id="useb" value="USE BONUS!" class="bos"><br></td>
+    </div>
+        
+</body>
