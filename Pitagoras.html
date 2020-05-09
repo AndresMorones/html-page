@@ -1,0 +1,129 @@
+<!doctype html>
+<head>
+    <title>Pythagoras Calculator</title>
+<style>
+    a {
+        text-align: center;
+        color: rgb(199, 181, 17);
+        font-style: italic;
+        font-weight: initial;
+        font-size: 60px;
+    }
+    body {
+        text-align: center;
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-bottom: 500px;
+        background-color: rgba(255, 240, 245, 0.712);
+    }
+    h3 {
+        text-align: left;
+    }
+    i {
+        text-align: left;
+        font-style: italic;
+    }
+</style>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("go").addEventListener("click",run)
+            document.getElementById("go").addEventListener("click",runChecks)
+
+            document.getElementById("go").addEventListener("click",getNumber);
+    })
+
+    function run() {
+        console.log("\n\nThe first number is")
+        console.log(document.getElementById("check1").value)
+        console.log("\n\nThe second number is")
+        console.log(document.getElementById("check2").value)       
+    }
+
+    function runChecks() {
+        console.log("\n\nIs the first number the hypotenuse")
+        console.log(document.getElementById("check1").checked)
+        console.log("\n\nIs the second number the hypotenuse")
+        console.log(document.getElementById("check2").checked)
+    }
+
+    function getNumber() {
+
+        var num1 = document.getElementById('number1').value;
+        var num2 = document.getElementById('number2').value;
+        var floatValue1;
+        var floatValue2;
+        var answer;
+
+        floatValue1 = parseFloat(num1)
+        floatValue2 = parseFloat(num2)
+        console.log("\n\nThe answer is:")
+        if (document.getElementById("check1").checked == false && document.getElementById("check2").checked == false) {
+            answer =  Math.sqrt(Math.pow(floatValue1,2) + Math.pow(floatValue2,2),2);
+            console.log(answer);
+        var target = document.getElementById("content");
+         var newContent = "<br><br><b> The answer is: </b>";
+         newContent += answer;
+         target.innerHTML = newContent;
+        }
+        else if (document.getElementById("check1").checked == true && document.getElementById("check2").checked == true) {
+            answer = "you selected two hypotenus";
+            console.log(answer);
+        var target = document.getElementById("content");
+         var newContent = "<br><br><b> The answer is: </b>";
+         newContent += answer;
+         target.innerHTML = newContent;
+        }
+        else if (document.getElementById("check1").checked == true && document.getElementById("check2").checked == false) {
+            answer =  Math.sqrt(Math.pow(floatValue1,2) - Math.pow(floatValue2,2),2)
+            console.log(answer);
+        var target = document.getElementById("content");
+         var newContent = "<br><br><b> The answer is: </b>";
+         newContent += answer;
+         target.innerHTML = newContent;
+        }
+        else if (document.getElementById("check1").checked == false && document.getElementById("check2").checked == true) {
+            answer =  Math.sqrt(Math.pow(floatValue2,2) - Math.pow(floatValue1,2),2)
+            console.log(answer);
+        var target = document.getElementById("content");
+         var newContent = "<br><br><b> The answer is: </b>";
+         newContent += answer;
+         target.innerHTML = newContent;
+        }
+
+    }
+</script>
+</head>  
+<body>
+    <br><br>
+    <div>
+    <a>Pythagoras Calculator</a>
+</div>
+    <br>
+    <div>
+        <br>
+        Online claculator for triangles with a 90° angle, this calculator finds the missing side on a triangle.
+        Insert the two values you already know and indicate if or wich one of this is the hypotenuse.
+        This is possible thanks to the Pythagorean Theorem wich indicates that a² + b² = c².
+    </div>
+    <br><br>
+    <h3>Insert the lengths of two sides of the triangle:</h3>
+    <div>
+        1#:
+        <input type="text" id="number1">
+        <input type="checkbox" id="check1" value="1 checkbox">Mark if this number the Hypotenuse of the triangle?<br><br>
+        2#:
+        <input type="text" id="number2">
+        <input type="checkbox" id="check2" value="2 checkbox">Mark if this number the Hypotenuse of the triangle?<br>
+        <br>
+        <input type="button" value="Calculate triangle" id="go"><br>
+   
+    </div>
+
+    <div id="content">
+        <br><br>
+        <b> The answer is: </b>
+        </div>
+
+</body>
