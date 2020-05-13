@@ -98,29 +98,29 @@ b {
         clicker.addEventListener('click', GetClick1);
 
         function GetClick1(c1) {
-        if (isb = true) {
+        if (isb == false) {
          score = score + 1;
         console.log(score);
         }
-        else if (isb = true) {
+        else if (isb == true) {
          score = score + 2;
         console.log(score);
         }
-        var target = document.getElementById("points");
+        var target1 = document.getElementById("points");
          var newContent = "<i>";
          newContent +=  score;
          newContent +=  "</i>";
          newContent +=  "<i> cookies</i>";
-         target.innerHTML = newContent;
+         target1.innerHTML = newContent;
         if (score > 9) {
-        var target = document.getElementById("bonus");
+        var target2 = document.getElementById("bonus");
          var newContent = "<i>BONUS!</i><br>";
          newContent +=  "10 cookies for x2 clicker";
-            target.innerHTML = newContent;
-            target.style.border = "1px  brown";
-            target.style.width = "200px";
-            target.style.padding = "5px";
-            target.style.position = "absolute";
+            target2.innerHTML = newContent;
+            target2.style.border = "1px  brown";
+            target2.style.width = "200px";
+            target2.style.padding = "5px";
+            target2.style.position = "absolute";
         
 
             
