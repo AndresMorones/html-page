@@ -8,6 +8,11 @@
         font-style: italic;
         font-weight: initial;
         font-size: 60px;
+
+    }
+    o {
+        color: rgba(255, 240, 245, 0.712);
+
     }
     body {
         text-align: center;
@@ -35,17 +40,13 @@
     })
 
     function run() {
-        console.log("\n\nThe first number is")
-        console.log(document.getElementById("check1").value)
-        console.log("\n\nThe second number is")
-        console.log(document.getElementById("check2").value)       
+        console.log("\n\nCheckbox value")
+        console.log(document.getElementById("check1").value)      
     }
 
     function runChecks() {
-        console.log("\n\nIs the first number the hypotenuse")
+        console.log("\n\nIs a number the hypotenuse")
         console.log(document.getElementById("check1").checked)
-        console.log("\n\nIs the second number the hypotenuse")
-        console.log(document.getElementById("check2").checked)
     }
 
     function getNumber() {
@@ -59,7 +60,7 @@
         floatValue1 = parseFloat(num1)
         floatValue2 = parseFloat(num2)
         console.log("\n\nThe answer is:")
-        if (document.getElementById("check1").checked == false && document.getElementById("check2").checked == false) {
+        if (document.getElementById("check1").checked == false) {
             answer =  Math.sqrt(Math.pow(floatValue1,2) + Math.pow(floatValue2,2),2);
             console.log(answer);
         var target = document.getElementById("content");
@@ -67,15 +68,7 @@
          newContent += answer;
          target.innerHTML = newContent;
         }
-        else if (document.getElementById("check1").checked == true && document.getElementById("check2").checked == true) {
-            answer = "you selected two hypotenus";
-            console.log(answer);
-        var target = document.getElementById("content");
-         var newContent = "<br><br><b> The answer is: </b>";
-         newContent += answer;
-         target.innerHTML = newContent;
-        }
-        else if (document.getElementById("check1").checked == true && document.getElementById("check2").checked == false) {
+        else if (document.getElementById("check1").checked == true &&  floatValue1 > floatValue2 ){
             answer =  Math.sqrt(Math.pow(floatValue1,2) - Math.pow(floatValue2,2),2)
             console.log(answer);
         var target = document.getElementById("content");
@@ -83,7 +76,7 @@
          newContent += answer;
          target.innerHTML = newContent;
         }
-        else if (document.getElementById("check1").checked == false && document.getElementById("check2").checked == true) {
+        else if (document.getElementById("check1").checked == false && floatValue2 > floatValue1) {
             answer =  Math.sqrt(Math.pow(floatValue2,2) - Math.pow(floatValue1,2),2)
             console.log(answer);
         var target = document.getElementById("content");
@@ -104,7 +97,7 @@
     <div>
         <br>
         Online claculator for triangles with a 90° angle, this calculator finds the missing side on a triangle.
-        Insert the two values you already know and indicate if or wich one of this is the hypotenuse.
+        Insert the two values you already know and indicate if one of this is the hypotenuse.
         This is possible thanks to the Pythagorean Theorem wich indicates that a² + b² = c².
     </div>
     <br><br>
@@ -112,11 +105,11 @@
     <div>
         1#:
         <input type="text" id="number1">
-        <input type="checkbox" id="check1" value="1 checkbox">Mark if this number the Hypotenuse of the triangle?<br><br>
+<br><br>
         2#:
-        <input type="text" id="number2">
-        <input type="checkbox" id="check2" value="2 checkbox">Mark if this number the Hypotenuse of the triangle?<br>
-        <br>
+        <input type="text" id="number2"> 
+        <br><br>
+        <input type="checkbox" id="check1" value="1 checkbox">Mark this if one of the numbers is the hypotenuse of the triangle?<br><br>
         <input type="button" value="Calculate triangle" id="go"><br>
    
     </div>
